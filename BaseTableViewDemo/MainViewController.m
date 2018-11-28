@@ -35,10 +35,7 @@
     if (!_sTableView) {
         
         _sTableView = [[STableView alloc]initWithFrame:(CGRect){0,0, WIDTHOFSCREEN, HEIGHTOFSCREEN}];
-        _sTableView.backgroundColor = [UIColor whiteColor];
-        _sTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _sTableView.accessibilityElementsHidden = YES;
-        
+
     }
     
     return _sTableView;

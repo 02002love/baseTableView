@@ -17,8 +17,15 @@
 		92A336EE21AD186D0012EC64 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A336ED21AD186D0012EC64 /* MainViewController.m */; };
 		92A336F621AD1F580012EC64 /* STableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A336F521AD1F580012EC64 /* STableView.m */; };
 		92A3370121AD5E6E0012EC64 /* STableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A336FF21AD5E6E0012EC64 /* STableViewCell.m */; };
-		92A3370421AD717D0012EC64 /* UtilMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A3370321AD717D0012EC64 /* UtilMethods.m */; };
 		92A3370621AD72A90012EC64 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92A3370521AD72A90012EC64 /* test.jpg */; };
+		92A3373321AE39990012EC64 /* TABMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A3372321AE39990012EC64 /* TABMethod.m */; };
+		92A3373421AE39990012EC64 /* UICollectionViewCell+Animated.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A3372421AE39990012EC64 /* UICollectionViewCell+Animated.m */; };
+		92A3373521AE39990012EC64 /* UITableView+Animated.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A3372521AE39990012EC64 /* UITableView+Animated.m */; };
+		92A3373621AE39990012EC64 /* TABViewAnimated.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A3372621AE39990012EC64 /* TABViewAnimated.m */; };
+		92A3373721AE39990012EC64 /* UIView+Animated.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A3372821AE39990012EC64 /* UIView+Animated.m */; };
+		92A3373821AE39990012EC64 /* UICollectionView+Animated.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A3372921AE39990012EC64 /* UICollectionView+Animated.m */; };
+		92A3373921AE39990012EC64 /* UIView+TABLayerout.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A3372C21AE39990012EC64 /* UIView+TABLayerout.m */; };
+		92A3373A21AE39990012EC64 /* UITableViewCell+Animated.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A3373121AE39990012EC64 /* UITableViewCell+Animated.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,9 +66,24 @@
 		92A336F521AD1F580012EC64 /* STableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STableView.m; sourceTree = "<group>"; };
 		92A336FF21AD5E6E0012EC64 /* STableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STableViewCell.m; sourceTree = "<group>"; };
 		92A3370021AD5E6E0012EC64 /* STableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STableViewCell.h; sourceTree = "<group>"; };
-		92A3370221AD717D0012EC64 /* UtilMethods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilMethods.h; sourceTree = "<group>"; };
-		92A3370321AD717D0012EC64 /* UtilMethods.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilMethods.m; sourceTree = "<group>"; };
 		92A3370521AD72A90012EC64 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
+		92A3372221AE39990012EC64 /* UIView+TABLayerout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TABLayerout.h"; sourceTree = "<group>"; };
+		92A3372321AE39990012EC64 /* TABMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABMethod.m; sourceTree = "<group>"; };
+		92A3372421AE39990012EC64 /* UICollectionViewCell+Animated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+Animated.m"; sourceTree = "<group>"; };
+		92A3372521AE39990012EC64 /* UITableView+Animated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Animated.m"; sourceTree = "<group>"; };
+		92A3372621AE39990012EC64 /* TABViewAnimated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABViewAnimated.m; sourceTree = "<group>"; };
+		92A3372721AE39990012EC64 /* UITableViewCell+Animated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Animated.h"; sourceTree = "<group>"; };
+		92A3372821AE39990012EC64 /* UIView+Animated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Animated.m"; sourceTree = "<group>"; };
+		92A3372921AE39990012EC64 /* UICollectionView+Animated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+Animated.m"; sourceTree = "<group>"; };
+		92A3372A21AE39990012EC64 /* UICollectionViewCell+Animated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+Animated.h"; sourceTree = "<group>"; };
+		92A3372B21AE39990012EC64 /* TABMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABMethod.h; sourceTree = "<group>"; };
+		92A3372C21AE39990012EC64 /* UIView+TABLayerout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TABLayerout.m"; sourceTree = "<group>"; };
+		92A3372D21AE39990012EC64 /* UITableView+Animated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Animated.h"; sourceTree = "<group>"; };
+		92A3372E21AE39990012EC64 /* TABAnimated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABAnimated.h; sourceTree = "<group>"; };
+		92A3372F21AE39990012EC64 /* UIView+Animated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Animated.h"; sourceTree = "<group>"; };
+		92A3373021AE39990012EC64 /* TABViewAnimated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABViewAnimated.h; sourceTree = "<group>"; };
+		92A3373121AE39990012EC64 /* UITableViewCell+Animated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Animated.m"; sourceTree = "<group>"; };
+		92A3373221AE39990012EC64 /* UICollectionView+Animated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+Animated.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,15 +169,38 @@
 		92A336F321AD1F4B0012EC64 /* STableView */ = {
 			isa = PBXGroup;
 			children = (
+				92A3372121AE39990012EC64 /* TABAnimated */,
 				92A3370021AD5E6E0012EC64 /* STableViewCell.h */,
 				92A3370521AD72A90012EC64 /* test.jpg */,
 				92A336FF21AD5E6E0012EC64 /* STableViewCell.m */,
 				92A336F421AD1F580012EC64 /* STableView.h */,
 				92A336F521AD1F580012EC64 /* STableView.m */,
-				92A3370221AD717D0012EC64 /* UtilMethods.h */,
-				92A3370321AD717D0012EC64 /* UtilMethods.m */,
 			);
 			path = STableView;
+			sourceTree = "<group>";
+		};
+		92A3372121AE39990012EC64 /* TABAnimated */ = {
+			isa = PBXGroup;
+			children = (
+				92A3372221AE39990012EC64 /* UIView+TABLayerout.h */,
+				92A3372321AE39990012EC64 /* TABMethod.m */,
+				92A3372421AE39990012EC64 /* UICollectionViewCell+Animated.m */,
+				92A3372521AE39990012EC64 /* UITableView+Animated.m */,
+				92A3372621AE39990012EC64 /* TABViewAnimated.m */,
+				92A3372721AE39990012EC64 /* UITableViewCell+Animated.h */,
+				92A3372821AE39990012EC64 /* UIView+Animated.m */,
+				92A3372921AE39990012EC64 /* UICollectionView+Animated.m */,
+				92A3372A21AE39990012EC64 /* UICollectionViewCell+Animated.h */,
+				92A3372B21AE39990012EC64 /* TABMethod.h */,
+				92A3372C21AE39990012EC64 /* UIView+TABLayerout.m */,
+				92A3372D21AE39990012EC64 /* UITableView+Animated.h */,
+				92A3372E21AE39990012EC64 /* TABAnimated.h */,
+				92A3372F21AE39990012EC64 /* UIView+Animated.h */,
+				92A3373021AE39990012EC64 /* TABViewAnimated.h */,
+				92A3373121AE39990012EC64 /* UITableViewCell+Animated.m */,
+				92A3373221AE39990012EC64 /* UICollectionView+Animated.h */,
+			);
+			path = TABAnimated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,12 +334,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92A3370421AD717D0012EC64 /* UtilMethods.m in Sources */,
+				92A3373A21AE39990012EC64 /* UITableViewCell+Animated.m in Sources */,
+				92A3373321AE39990012EC64 /* TABMethod.m in Sources */,
+				92A3373821AE39990012EC64 /* UICollectionView+Animated.m in Sources */,
 				92A3370121AD5E6E0012EC64 /* STableViewCell.m in Sources */,
+				92A3373921AE39990012EC64 /* UIView+TABLayerout.m in Sources */,
+				92A3373621AE39990012EC64 /* TABViewAnimated.m in Sources */,
 				92A336C721AB94C50012EC64 /* main.m in Sources */,
 				92A336F621AD1F580012EC64 /* STableView.m in Sources */,
+				92A3373421AE39990012EC64 /* UICollectionViewCell+Animated.m in Sources */,
 				92A336B921AB94C20012EC64 /* AppDelegate.m in Sources */,
 				92A336EE21AD186D0012EC64 /* MainViewController.m in Sources */,
+				92A3373721AE39990012EC64 /* UIView+Animated.m in Sources */,
+				92A3373521AE39990012EC64 /* UITableView+Animated.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

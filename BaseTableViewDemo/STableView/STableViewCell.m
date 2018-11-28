@@ -8,7 +8,9 @@
 
 
 #import "STableViewCell.h"
-#import "UtilMethods.h"
+#import "UITableViewCell+Animated.h"
+#import "UIView+Animated.h"
+#import "TABMethod.h"
 
 static NSString * cellID = @"STABLEVIEWCELLID";
 @interface STableViewCell(){
@@ -44,7 +46,7 @@ static NSString * cellID = @"STABLEVIEWCELLID";
         UIImageView *iv = [[UIImageView alloc] init];
         iv.contentMode = UIViewContentModeScaleAspectFill;
         iv.layer.masksToBounds = YES;
-//        iv.loadStyle = TABViewLoadAnimationWithOnlySkeleton;
+        iv.loadStyle = TABViewLoadAnimationWithOnlySkeleton;
         
         gameImg = iv;
         [self addSubview:iv];
@@ -54,8 +56,8 @@ static NSString * cellID = @"STABLEVIEWCELLID";
         UILabel *lab = [[UILabel alloc]init];
         [lab setFont:tab_kFont(15)];
         [lab setTextColor:[UIColor blackColor]];
-        [lab setText:@"1212"];
-//        lab.loadStyle = TABViewLoadAnimationLong;
+        [lab setText:@""];
+        lab.loadStyle = TABViewLoadAnimationLong;
         
         titleLab = lab;
         [self addSubview:lab];
@@ -65,8 +67,8 @@ static NSString * cellID = @"STABLEVIEWCELLID";
         UILabel *lab = [[UILabel alloc]init];
         [lab setFont:tab_kFont(12)];
         [lab setTextColor:[UIColor grayColor]];
-        [lab setText:@"3333"];
-//        lab.loadStyle = TABViewLoadAnimationShort;
+        [lab setText:@""];
+        lab.loadStyle = TABViewLoadAnimationShort;
         
         timeLab = lab;
         [self addSubview:lab];
@@ -74,10 +76,10 @@ static NSString * cellID = @"STABLEVIEWCELLID";
     
     {
         UIButton *btn = [[UIButton alloc]init];
-        [btn setTitle:@"4555" forState:UIControlStateNormal];
+        [btn setTitle:@"" forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [btn.titleLabel setFont:tab_kFont(12)];
-//        btn.loadStyle = TABViewLoadAnimationWithOnlySkeleton;
+        btn.loadStyle = TABViewLoadAnimationWithOnlySkeleton;
         
         statusBtn = btn;
         [self addSubview:btn];
@@ -88,8 +90,8 @@ static NSString * cellID = @"STABLEVIEWCELLID";
     [super layoutSubviews];
     
     //获取对应组件文本大小
-    CGSize titleSize = [UtilMethods tab_getSizeWithText:titleLab.text sizeWithFont:tab_kFont(15) constrainedToSize:CGSizeMake(MAXFLOAT, 10)];
-    CGSize timeSize = [UtilMethods tab_getSizeWithText:timeLab.text sizeWithFont:tab_kFont(12) constrainedToSize:CGSizeMake(MAXFLOAT, 25)];
+    CGSize titleSize = [TABMethod tab_getSizeWithText:titleLab.text sizeWithFont:tab_kFont(15) constrainedToSize:CGSizeMake(MAXFLOAT, 10)];
+    CGSize timeSize = [TABMethod tab_getSizeWithText:timeLab.text sizeWithFont:tab_kFont(12) constrainedToSize:CGSizeMake(MAXFLOAT, 25)];
     
     //布局
     gameImg.frame = CGRectMake(15, 10, (self.frame.size.height-20)*1.5, (self.frame.size.height-20));

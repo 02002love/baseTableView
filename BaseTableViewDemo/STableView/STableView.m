@@ -8,6 +8,7 @@
 
 #import "STableView.h"
 #import "STableViewCell.h"
+#import "UITableView+Animated.h"
 
 @interface STableView()<UITableViewDelegate, UITableViewDataSource>
 
@@ -22,6 +23,13 @@
     if (self = [super initWithFrame:frame style:UITableViewStylePlain]) {
         self.dataSource = self;
         self.delegate = self;
+        self.backgroundColor = [UIColor whiteColor];
+        self.separatorStyle = UITableViewCellSeparatorStyleNone;
+        self.accessibilityElementsHidden = YES;
+        self.animatedStyle = TABTableViewAnimationStart;  // 开启动画
+        self.estimatedRowHeight = 0;
+        self.estimatedSectionFooterHeight = 0;
+        self.estimatedSectionHeaderHeight = 0;
     }
     return self;
 }
@@ -39,8 +47,10 @@
 - (STableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     STableViewCell * cell = [STableViewCell initCellInTable:tableView];
-    [cell fillCellWithModel:@[]];
     
+    if (tableView.animatedStyle != TABTableViewAnimationStart) {
+        [cell fillCellWithModel:@[]];
+    }
     return cell;
     
 }
