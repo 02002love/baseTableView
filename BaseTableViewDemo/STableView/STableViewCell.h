@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -25,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param model 实体
  */
-- (void)fillCellWithModel:(id)model;
+- (void)fillCellWithModel:(SModel *)model;
 
 @end
 

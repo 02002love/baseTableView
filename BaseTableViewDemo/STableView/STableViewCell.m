@@ -15,7 +15,7 @@
 static NSString * cellID = @"STABLEVIEWCELLID";
 @interface STableViewCell(){
     
-    UIImageView *gameImg;
+    UIImageView *iconImg;
     UILabel *titleLab;
     UILabel *timeLab;
     UIButton *statusBtn;
@@ -48,7 +48,7 @@ static NSString * cellID = @"STABLEVIEWCELLID";
         iv.layer.masksToBounds = YES;
         iv.loadStyle = TABViewLoadAnimationWithOnlySkeleton;
         
-        gameImg = iv;
+        iconImg = iv;
         [self addSubview:iv];
     }
     
@@ -94,12 +94,12 @@ static NSString * cellID = @"STABLEVIEWCELLID";
     CGSize timeSize = [TABMethod tab_getSizeWithText:timeLab.text sizeWithFont:tab_kFont(12) constrainedToSize:CGSizeMake(MAXFLOAT, 25)];
     
     //布局
-    gameImg.frame = CGRectMake(15, 10, (self.frame.size.height-20)*1.5, (self.frame.size.height-20));
-    gameImg.layer.cornerRadius = 5;
+    iconImg.frame = CGRectMake(15, 10, (self.frame.size.height-20)*1.5, (self.frame.size.height-20));
+    iconImg.layer.cornerRadius = 5;
     
-    titleLab.frame = CGRectMake(CGRectGetMaxX(gameImg.frame)+15, 10, titleSize.width, 20);
-    timeLab.frame = CGRectMake(CGRectGetMaxX(gameImg.frame)+15, CGRectGetMaxY(titleLab.frame)+5, timeSize.width,15);
-    statusBtn.frame = CGRectMake(CGRectGetMaxX(gameImg.frame)+15, CGRectGetMaxY(timeLab.frame)+5+5,70, 20);
+    titleLab.frame = CGRectMake(CGRectGetMaxX(iconImg.frame)+15, 10, titleSize.width, 20);
+    timeLab.frame = CGRectMake(CGRectGetMaxX(iconImg.frame)+15, CGRectGetMaxY(titleLab.frame)+5, timeSize.width,15);
+    statusBtn.frame = CGRectMake(CGRectGetMaxX(iconImg.frame)+15, CGRectGetMaxY(timeLab.frame)+5+5,70, 20);
     
     if ( timeSize.width > 0 ) {
         statusBtn.layer.cornerRadius = 5;
@@ -107,14 +107,14 @@ static NSString * cellID = @"STABLEVIEWCELLID";
 }
 
 #pragma mark - private method
-- (void)fillCellWithModel:(id)model{
+- (void)fillCellWithModel:(SModel *)model{
     if (model) {
-        titleLab.text = [NSString stringWithFormat:@"赛事标题赛事标题～"];
-        timeLab.text = @"报名时间";
-        [gameImg setImage:[UIImage imageNamed:@"test.jpg"]];
+        titleLab.text = model.title;
+        timeLab.text = [NSString stringWithFormat:@"外文名: %@" ,model.original_title];
+        [iconImg sd_setImageWithURL:[NSURL URLWithString:model.images[@"large"]]];
         
-        [statusBtn setTitle:@"已结束" forState:UIControlStateNormal];
-        [statusBtn setBackgroundColor:[UIColor grayColor]];
+        [statusBtn setTitle:model.year forState:UIControlStateNormal];
+        [statusBtn setBackgroundColor:[UIColor lightGrayColor]];
     }
 }
 @end

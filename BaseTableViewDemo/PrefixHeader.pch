@@ -1,0 +1,153 @@
+//
+//  PrefixHeader.pch
+//  XHMall
+//
+//  Created by XH on 2017/6/2.
+//  Copyright © 2017年 XH. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+
+//字体颜色
+#define colorTitle 0x787878
+
+//定义屏幕宽高
+#define WIDTHOFSCREEN  [UIScreen mainScreen].bounds.size.width
+#define HEIGHTOFSCREEN [UIScreen mainScreen].bounds.size.height
+
+//我的页面中的按钮的高度
+#define HEIGHTOFMEPAGEBTN 45
+
+//cell 头和脚的高度
+#define HEADHEIGHT 50
+#define FOOTHEIGHT 30
+
+//item 之间的间距
+#define spaceOfItem 5
+//距离边界的间距
+#define spaceOfEdge 10
+
+//地图 Key
+#define AMAP_KEY @"f0c5d52bca09c1f5f3dee7e0393baedc"
+
+//友盟分享 Key
+#define SHARE_KEY @"58b1431007fe654ee200050f"
+
+//左侧菜单栏的宽度
+#define LEFTTABLEWIDTH 95
+
+//collectionItem 高度和宽度
+#define itemWidthAndHeight (WIDTHOFSCREEN - LEFTTABLEWIDTH - 2* spaceOfEdge - 2* spaceOfItem) / 3
+
+// block self
+#define WEAKSELF typeof(self) __weak weakSelf = self;
+
+//间隙
+#define SPACE 10
+
+//host
+//#define HOST @"http://192.168.1.110/mapi/"
+
+//#define HOST @"http://121.69.62.94/"
+#define HOST @"https://api.douban.com/"
+
+
+//自定义 Log 函数
+#ifdef DEBUG
+#define SKLog(...) NSLog(__VA_ARGS__)
+#else
+#define SKLog(...)
+#endif
+
+
+//RGB颜色设置
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 blue:((float)(rgbValue & 0x0000FF))/255.0 alpha:1.0]
+
+
+/**
+ *  设置颜色
+ *
+ *  @param r 红
+ *  @param g 绿
+ *  @param b 蓝
+ *  @param a 透明度
+ *
+ *  @return  UIColor
+ */
+#define setRGBColor(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+
+
+/**
+ *  设置APP主题颜色
+ *
+ *   RGB : (228, 136, 50)
+ *
+ *  @return  UIColor
+ */
+#define getThemeColor [UIColor colorWithRed:125/255.0 green:96/255.0 blue:69/255.0 alpha:1.0]
+
+/**
+ *  定义弱引用 self
+ *
+ *  @param self 本身
+ *
+ *  @return 弱 self
+ */
+#define weaklySelf(self) __weak typeof(self) weakSelf = self
+
+/**
+ *  定义强引用 self
+ *
+ *  @param weakSelf 本身
+ *
+ *  @return 强self
+ */
+#define stronglySelf(weakSelf) __strong typeof(weakSelf) strongSelf = weakSelf
+
+#define FontSizeOfiOS(psSize)  psSize/2 * 72 / 96
+
+//图片验证码个数
+#define CHAPCHA_NUMBER 4
+
+//短信验证码的时间
+#define TIME_INTERVAL 120
+
+// APP版本号
+#define VERSION @"1.0"
+
+
+//第三方类库
+#import "AFNetworking.h"
+#import "MJRefresh.h"
+#import "SDWebImage-umbrella.h"
+#import "SVProgressHUD.h"
+#import "MJExtension.h"
+
+//上传的图片类
+#import "UploadFile.h"
+//UItableview 为空时设置 PlaceHolder
+#import "UITableView+EmptyTableViewPlaceHolder.h"
+
+//网络请求管理Manager类
+#import "AFNManager.h"
+
+#import "UtilsFunctions.h"
+
+#import "UIView+ChangeFrame.h"
+
+
+//返回状态码
+#define ERROR       10           //失败
+#define SUCCESS     0          //成功
+#define LOGOUT      20          //未登入
+#define LOGTIMEOUT  30          //登入信息过期
+#define LOGLIMITE   40          //登入被限制
+
+#import <math.h>
+#endif /* PrefixHeader_pch */

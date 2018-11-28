@@ -10,6 +10,7 @@
 #import "STableViewCell.h"
 #import "UITableView+Animated.h"
 
+
 @interface STableView()<UITableViewDelegate, UITableViewDataSource>
 
 @end
@@ -49,7 +50,7 @@
     STableViewCell * cell = [STableViewCell initCellInTable:tableView];
     
     if (tableView.animatedStyle != TABTableViewAnimationStart) {
-        [cell fillCellWithModel:@[]];
+        [cell fillCellWithModel:self.sourceArray[indexPath.row]];
     }
     return cell;
     
@@ -61,4 +62,5 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return .1;
 }
+
 @end
