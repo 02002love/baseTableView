@@ -18,8 +18,8 @@
 
 @interface MainViewController ()<FetchDataDelegate>
 
-@property (strong, nonatomic) STableView * sTableView;//列表 分组
-@property (strong, nonatomic) FetchData * fetchDataTool;//列表 分组
+@property (strong, nonatomic) STableView * tableViewList;//列表 分组
+@property (strong, nonatomic) FetchData * fetchDataTool;//列表 数据请求
 
 @end
 
@@ -29,18 +29,15 @@
     [super viewDidLoad];
     
     [self.fetchDataTool fetchData];
-    
-    self.view.backgroundColor = [UIColor greenColor];
-    [self.view addSubview:self.sTableView];
-    
+    [self.view addSubview:self.tableViewList];
     
 }
 
-- (STableView *)sTableView{
-    if (!_sTableView) {
-        _sTableView = [[STableView alloc]initWithFrame:(CGRect){0,0, WIDTHOFSCREEN, HEIGHTOFSCREEN}];
+- (STableView *)tableViewList{
+    if (!_tableViewList) {
+        _tableViewList = [[STableView alloc]initWithFrame:(CGRect){0,0, WIDTHOFSCREEN, HEIGHTOFSCREEN} style:UITableViewStylePlain];
     }
-    return _sTableView;
+    return _tableViewList;
 }
 
 - (FetchData *)fetchDataTool{
@@ -54,10 +51,10 @@
 - (void)fetchDataSuccess:(NSMutableArray *)arr{
     if (arr) {
         
-        self.sTableView.animatedStyle = TABTableViewAnimationEnd;
+        self.tableViewList.animatedStyle = TABTableViewAnimationEnd;
         
-        self.sTableView.sourceArray = arr;
-        [self.sTableView reloadData];
+        self.tableViewList.sourceArray = arr;
+        [self.tableViewList reloadData];
     }
 }
 

@@ -19,15 +19,15 @@
 
 #pragma mark - lifeCycle
 
-- (instancetype)initWithFrame:(CGRect)frame{
-    
-    if (self = [super initWithFrame:frame style:UITableViewStylePlain]) {
+- (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style{
+    self = [super initWithFrame:frame style:style];
+    if (self) {
+        self.animatedStyle = TABTableViewAnimationStart;  // 开启动画
         self.dataSource = self;
         self.delegate = self;
         self.backgroundColor = [UIColor whiteColor];
         self.separatorStyle = UITableViewCellSeparatorStyleNone;
         self.accessibilityElementsHidden = YES;
-        self.animatedStyle = TABTableViewAnimationStart;  // 开启动画
         self.estimatedRowHeight = 0;
         self.estimatedSectionFooterHeight = 0;
         self.estimatedSectionHeaderHeight = 0;
@@ -36,9 +36,8 @@
 }
 #pragma mark - TableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
-//    return self.sourceArray.count;
-    return 12;
+//    [tableView tableViewPlaceHolderShowLabelText:@"空空如也" img:@"empty-img" row:self.sourceArray.count];
+    return self.sourceArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -50,8 +49,12 @@
     STableViewCell * cell = [STableViewCell initCellInTable:tableView];
     
     if (tableView.animatedStyle != TABTableViewAnimationStart) {
-        [cell fillCellWithModel:self.sourceArray[indexPath.row]];
+        if (self.sourceArray.count > 0) {
+            [cell fillCellWithModel:self.sourceArray[indexPath.row]];
+        }
     }
+    
+    
     return cell;
     
 }
@@ -61,6 +64,13 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return .1;
+}
+
+- (NSMutableArray *)sourceArray{
+    if (!_sourceArray) {
+        _sourceArray = [NSMutableArray array];
+    }
+    return _sourceArray;
 }
 
 @end

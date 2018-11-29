@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (strong, nonatomic) NSMutableArray * sourceArray;
 
-- (instancetype) initWithFrame:(CGRect)frame;
+//- (instancetype) initWithFrame:(CGRect)frame;
 
 @end
 

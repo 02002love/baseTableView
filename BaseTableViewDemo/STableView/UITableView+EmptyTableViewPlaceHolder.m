@@ -19,7 +19,6 @@
         UIView * bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
         bgView.backgroundColor = setRGBColor(250, 250, 250, 1);
         
-        
         self.backgroundView = bgView;
         
         //提示图片
@@ -55,8 +54,6 @@
         goHome.titleLabel. font = [UIFont systemFontOfSize:14];
         [goHome setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [goHome setBackgroundColor:setRGBColor(210, 121, 107, 1)];
-        
-        
         
         goHome.y = noticeMsg.y +  noticeMsg.height + 20;
         goHome.height = 32;

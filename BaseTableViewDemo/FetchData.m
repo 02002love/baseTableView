@@ -32,7 +32,7 @@
 
 - (void)fetchData{
     
-    [AFNManager requestwithURLString:@"v2/movie/top250" type:POST parameters:nil uploadFile:nil successBlock:^(NSURLSessionDataTask * task, id res) {
+    [AFNManager requestwithURLString:@"v2/movie/top250" type:GET parameters:nil uploadFile:nil successBlock:^(NSURLSessionDataTask * task, id res) {
         
         NSDictionary * dict = [UtilsFunctions result_decryptWithData:res];
         
