@@ -8,7 +8,6 @@
 
 
 #import "STableViewCell.h"
-#import "UITableViewCell+Animated.h"
 #import "UIView+Animated.h"
 #import "TABMethod.h"
 

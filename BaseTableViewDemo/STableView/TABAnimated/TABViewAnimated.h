@@ -11,21 +11,26 @@
 
 #import "UIView+Animated.h"
 
+#define tab_kColor(c) [UIColor colorWithRed:((c>>24)&0xFF)/255.0 green:((c>>16)&0xFF)/255.0 blue:((c>>8)&0xFF)/255.0 alpha:((c)&0xFF)/255.0]
+#define tab_kBackColor tab_kColor(0xEEEEEEFF)
+
 typedef NS_ENUM(NSInteger,TABAnimationType) {
-    TABAnimationTypeDefault = 0,     // default animation.
-    TABAnimationTypeShimmer          // shimmer animation for all suvViews.
+    TABAnimationTypeDefault = 0,     // default animation for all views in your project.
+    TABAnimationTypeShimmer,         // shimmer animation for all views in your project.
+    TABAnimationTypeOnlySkeleton,    // onlySkeleton for all views in your project.
+    TABAnimationTypeCustom           // you can select one among the three types mentioned above for the superView.
 };
 
 @interface TABViewAnimated : NSObject
 
 @property (nonatomic) TABAnimationType animationType;
 
-@property (nonatomic) CGFloat animatedDuration;             // TABAnimationTypeDefault: default is 0.4
-                                                            // TABAnimationTypeShimmer: default is 1.5
+@property (nonatomic) CGFloat animatedDuration;                    // TABAnimationTypeDefault: default is 0.4
+@property (nonatomic) CGFloat animatedDurationShimmer;             // TABAnimationTypeShimmer: default is 1.5
 
-@property (nonatomic, strong) UIColor *animatedColor;       // default is 0xEEEEEE. the backgroundcolor of your animations.
-@property (nonatomic) CGFloat longToValue;                  // toValue for LongAnimation
-@property (nonatomic) CGFloat shortToValue;                 // toValue for ShortAnimation
+@property (nonatomic,strong) UIColor *animatedColor;               // default is 0xEEEEEE. the backgroundcolor of your animations.
+@property (nonatomic) CGFloat longToValue;                         // toValue for LongAnimation
+@property (nonatomic) CGFloat shortToValue;                        // toValue for ShortAnimation
 
 /**
  SingleTon
@@ -36,7 +41,7 @@ typedef NS_ENUM(NSInteger,TABAnimationType) {
 
 /**
  start/end animatiqons to UIView.
- 
+
  @param view to the UIView
  */
 - (void)startOrEndViewAnimated:(UIView *)view;
@@ -56,6 +61,12 @@ typedef NS_ENUM(NSInteger,TABAnimationType) {
 - (void)startOrEndCollectionAnimated:(UICollectionViewCell *)cell;
 
 #pragma mark - Default Animation
+
+/**
+ shimmer Animation
+ 
+ */
+- (void)initWithDefaultAnimated;
 
 /**
  set animation duration and backgroundcolor.
@@ -95,5 +106,19 @@ to set toValue
  */
 - (void)initWithShimmerAnimatedDuration:(CGFloat)duration
                               withColor:(UIColor *)color;
+
+#pragma mark - OnlySkeleton
+
+- (void)initWithOnlySkeleton;
+
+#pragma mark - Custom Animation
+
+- (void)initWithCustomAnimation;
+
+- (void)initWithDefaultDurationAnimation:(CGFloat)defaultAnimationDuration
+                         withLongToValue:(CGFloat)longToValue
+                        withShortToValue:(CGFloat)shortToValue
+            withShimmerAnimationDuration:(CGFloat)shimmerAnimationDuration
+                               withColor:(UIColor *)color;
 
 @end

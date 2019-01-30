@@ -6,17 +6,15 @@
 //  Copyright © 2018年 tigerAndBull. All rights reserved.
 //
 
-#import "UICollectionViewCell+Animated.h"
+#import "UICollectionViewCell+TABLayoutSubviews.h"
 
 #import "UICollectionView+Animated.h"
-
-#import "TABMethod.h"
 
 #import "TABViewAnimated.h"
 
 #import <objc/runtime.h>
 
-@implementation UICollectionViewCell (Animated)
+@implementation UICollectionViewCell (TABLayoutSubviews)
 
 + (void)load {
     
@@ -53,7 +51,6 @@
     
     // start animation/end animation
     dispatch_async(dispatch_get_main_queue(), ^{
-        
         [[TABViewAnimated sharedAnimated]startOrEndCollectionAnimated:self];
     });
 }

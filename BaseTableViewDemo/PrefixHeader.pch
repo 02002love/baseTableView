@@ -140,7 +140,7 @@
 #import "UtilsFunctions.h"
 
 #import "UIView+ChangeFrame.h"
-
+#import "TABAnimated.h"
 
 //返回状态码
 #define ERROR       10           //失败

@@ -23,7 +23,6 @@
         
         // Gets the viewDidLoad method to the class,whose type is a pointer to a objc_method structure.
         Method originMethod = class_getInstanceMethod([self class], @selector(setDelegate:));
-        
         // Get the method you created.
         Method newMethod = class_getInstanceMethod([self class], @selector(tab_setDelegate:));
         
@@ -32,7 +31,6 @@
         BOOL isAdd = class_addMethod([self class], @selector(tab_setDelegate:), newIMP, method_getTypeEncoding(newMethod));
         
         if (isAdd) {
-            
             // replace
             class_replaceMethod([self class], @selector(setDelegate:), newIMP, method_getTypeEncoding(newMethod));
         } else {
@@ -53,7 +51,6 @@
     }
 
     [self tab_setDelegate:delegate];
-    
 }
 
 #pragma mark - TABCollectionViewDelegate
@@ -100,17 +97,15 @@
     }
 }
 
-
 #pragma mark - Getter / Setter
 
 - (TABViewAnimationStyle)animatedStyle {
-    
     NSNumber *value = objc_getAssociatedObject(self, @selector(animatedStyle));
     return value.intValue;
 }
 
 - (void)setAnimatedStyle:(TABViewAnimationStyle)animatedStyle {
-
+    
     // If the animation started, disable touch events.
     if (animatedStyle == 4) {
         [self setScrollEnabled:NO];
@@ -129,6 +124,15 @@
 
 - (void)setAnimatedCount:(NSInteger)animatedCount {
     objc_setAssociatedObject(self, @selector(animatedCount), @(animatedCount), OBJC_ASSOCIATION_ASSIGN);
+}
+
+- (NSInteger)sectionCount {
+    NSNumber *value = objc_getAssociatedObject(self, @selector(sectionCount));
+    return (value.integerValue == 0)?(3):(value.integerValue);
+}
+
+- (void)setSectionCount:(NSInteger)sectionCount {
+    objc_setAssociatedObject(self, @selector(sectionCount), @(sectionCount), OBJC_ASSOCIATION_ASSIGN);
 }
 
 @end

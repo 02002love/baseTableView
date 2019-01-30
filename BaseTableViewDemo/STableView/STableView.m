@@ -45,16 +45,18 @@
 }
 
 - (STableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    STableViewCell * cell = [STableViewCell initCellInTable:tableView];
-    
-    if (tableView.animatedStyle != TABTableViewAnimationStart) {
-        if (self.sourceArray.count > 0) {
-            [cell fillCellWithModel:self.sourceArray[indexPath.row]];
-        }
+    static NSString *cellId = @"cellId";
+    STableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (!cell) {
+        cell = [[STableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     
-    
+//    if (tableView.animatedStyle != TABTableViewAnimationStart) {
+        if (self.sourceArray.count > 0) {
+            self.animatedStyle = TABTableViewAnimationEnd;
+            [cell fillCellWithModel:self.sourceArray[indexPath.row]];
+        }
+//    }
     return cell;
     
 }

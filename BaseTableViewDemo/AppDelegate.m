@@ -16,12 +16,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // 设置TABAnimated相关属性
+    [[TABViewAnimated sharedAnimated] initWithOnlySkeleton];
+    [TABViewAnimated sharedAnimated].animatedColor = tab_kBackColor;
     
     MainViewController * mainVC = [MainViewController new];
     UINavigationController * navi = [[UINavigationController alloc] initWithRootViewController:mainVC];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-     [self.window setRootViewController:navi];
+    [self.window setRootViewController:navi];
     [self.window makeKeyAndVisible];
     
     return YES;
